@@ -1,4 +1,4 @@
-import { useState } from 'react'
+/*import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -33,4 +33,56 @@ function App() {
   )
 }
 
-export default App
+export default App */
+
+import { useState } from 'react'
+//import reactLogo from './assets/react.svg'
+//import viteLogo from '/vite.svg'
+//import './App.css'
+import { CssBaseline, Container, Typography, Button } from '@mui/material';
+import Header from './components/Header';
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+      <CssBaseline />
+      <Header />
+
+      <Container sx={{ textAlign: 'center', mt: 4 }}>
+        <div>
+          <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
+            <img src="/vite.svg" className="logo" alt="Vite logo" />
+          </a>
+          <a href="https://react.dev" target="_blank" rel="noreferrer">
+            <img src="/react.svg" className="logo react" alt="React logo" />
+          </a>
+        </div>
+
+        <Typography variant="h3" gutterBottom>
+          Vite + React
+        </Typography>
+
+        <div className="card">
+          <Button 
+            variant="contained" 
+            color="primary" 
+            onClick={() => setCount((prevCount) => prevCount + 1)}
+          >
+            Count is {count}
+          </Button>
+          <Typography variant="body1" sx={{ mt: 2 }}>
+            Edit <code>src/App.jsx</code> and save to test HMR
+          </Typography>
+        </div>
+
+        <Typography variant="body2" className="read-the-docs" sx={{ mt: 3 }}>
+          Click on the Vite and React logos to learn more
+        </Typography>
+      </Container>
+    </>
+  );
+}
+
+export default App;

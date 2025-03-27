@@ -45,6 +45,7 @@ import Header from './components/Header';
 function App() {
   const [count, setCount] = useState(0)
 
+
   return (
     <>
       <CssBaseline />
@@ -56,7 +57,7 @@ function App() {
             <img src="/vite.svg" className="logo" alt="Vite logo" />
           </a>
           <a href="https://react.dev" target="_blank" rel="noreferrer">
-            <img src="/react.svg" className="logo react" alt="React logo" />
+            <img src="/vite.svg" className="logo react" alt="React logo" />
           </a>
         </div>
 
@@ -67,17 +68,17 @@ function App() {
         <div className="card">
           <Button 
             variant="contained" 
-            color="primary" 
+            color="button" 
             onClick={() => setCount((prevCount) => prevCount + 1)}
           >
             Count is {count}
           </Button>
-          <Typography variant="body1" sx={{ mt: 2 }}>
+          <Typography variant="h3" sx={{ mt: 2 }}>
             Edit <code>src/App.jsx</code> and save to test HMR
           </Typography>
         </div>
 
-        <Typography variant="body2" className="read-the-docs" sx={{ mt: 3 }}>
+        <Typography variant="text" className="read-the-docs" sx={{ mt: 3 }}>
           Click on the Vite and React logos to learn more
         </Typography>
       </Container>

@@ -35,7 +35,7 @@ function App() {
 
 export default App */
 
-import { useState } from 'react'
+/*import { useState } from 'react'
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 //import './App.css'
@@ -68,7 +68,7 @@ function App() {
         <div className="card">
           <Button 
             variant="contained" 
-            color="button" 
+            color="background" 
             onClick={() => setCount((prevCount) => prevCount + 1)}
           >
             Count is {count}
@@ -86,4 +86,33 @@ function App() {
   );
 }
 
+export default App;*/
+
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { CssBaseline } from "@mui/material";
+import Header from "./components/Header";
+import Home from "./pages/Home"; // Página de inicio
+import Tematicas from "./pages/Tematicas";
+//import AulaVirtual from "./pages/AulaVirtual";
+//import Testimonios from "./pages/Testimonios";
+//import Soporte from "./pages/Soporte";
+
+function App() {
+  return (
+    <>
+      <CssBaseline />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/tematicas" element={<Tematicas />} />
+       {/*<Route path="/aula-virtual" element={<AulaVirtual />} />*/}
+        {/*<Route path="/testimonios" element={<Testimonios />} />*/}
+        {/*<Route path="/soporte" element={<Soporte />} />*/}
+      </Routes>
+    </>
+  );
+}
+
 export default App;
+

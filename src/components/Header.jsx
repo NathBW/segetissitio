@@ -52,6 +52,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -67,7 +68,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ color: "primary", padding: "8px 64px" , borderRadius: "20px"}}>
+    <AppBar component="header" className="header" position="static" sx={{ color: "primary", padding: "8px 64px" , borderRadius: "20px", marginTop: "2rem", }}>
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         {/* Logo y Línea*/}
         <Box sx={{ display: "flex", alignItems: "center" /*, flexGrow: 1 */}}>
@@ -76,25 +77,116 @@ const Header = () => {
           </Typography>*/}
           <img src={logo} alt="Tobías BPA Logo" style={{ height: 40 }} />
 
-          <Divider orientation="vertical" flexItem sx={{ mx: 2, borderColor: "#DBE64C", height: 40, borderWidth: 2}} />
+          <Divider orientation="vertical" flexItem sx={{ mx: 2, borderColor: theme.palette.text.light, height: 40, borderWidth: 2}} />
         </Box>
 
         {/* Menú de navegación en desktop */}
         {!isMobile && (
           <>
+            <Button component={Link} to="/"
+              sx={{
+                position: "relative", // Necesario para ::after
+                color: currentPath === "/" ? theme.palette.background.main : "inherit",
+                "&:hover": { backgroundColor: theme.palette.primary.light },
+                "&::after": currentPath === "/" ? { // Si es la página actual
+                  content: '""',
+                  position: "absolute",
+                  left: "50%",
+                  bottom: 0,
+                  width: "100%",
+                  height: "4px",
+                  backgroundColor: theme.palette.background.main, // Color de la línea
+                  transform: "translateX(-50%)", // Centrar la línea
+                  borderRadius: " 0 0 5px 5px",
+                } : {}, // Si no es la actual, no se agrega ::after
+              }}> 
+              <Typography variant="buttontext">Inicio</Typography>
+            </Button>
+
+            <Button component={Link} to="/tematicas"
+              sx={{
+                position: "relative", // Necesario para ::after
+                color: currentPath === "/tematicas" ? theme.palette.background.main : "inherit",
+                "&:hover": { backgroundColor: theme.palette.primary.light },
+                "&::after": currentPath === "/tematicas" ? { // Si es la página actual
+                  content: '""',
+                  position: "absolute",
+                  left: "50%",
+                  bottom: 0,
+                  width: "100%",
+                  height: "4px",
+                  backgroundColor: theme.palette.background.main, // Color de la línea
+                  transform: "translateX(-50%)", // Centrar la línea
+                  borderRadius: " 0 0 5px 5px",
+                } : {}, // Si no es la actual, no se agrega ::after
+              }}> 
+              <Typography variant="buttontext">Temáticas</Typography>
+            </Button>  
+
             <Button 
-              sx={{ position: "relative", color: currentPath === "/" ? "#DBE64C" : "inherit", "&::after": {content: '""',display: "block",width: currentPath === "/" ? "100%" : "0%",
-                  height: "3px",backgroundColor: "#DBE64C",transition: "width 0.3s ease-in-out",
-                  },"&:hover::after": {width: "100%",
-                  },"&:hover": { backgroundColor: theme.palette.primary.light 
-                  }}}color="inherit">
-              <Typography   sx={{position: "relative", color: "inherit", "&:hover": { backgroundColor: theme.palette.primary.light },"&::after": currentPath === "/" ?
-              {content: '""',position: "absolute",left: "50%",bottom: 0,width:"100%",height: "3px",backgroundColor: theme.palette.secondary.main, transform: "translateX(-50%)",} : {}, // Si no es la actual, no se agrega ::after
-              }} variant="buttontext">Inicio</Typography></Button>
-            <Button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} color="inherit"> <Typography variant="buttontext">Temáticas</Typography></Button>
+              sx={{
+                position: "relative", // Necesario para ::after
+                color: currentPath === "/tema" ? theme.palette.background.main : "inherit",
+                "&:hover": { backgroundColor: theme.palette.primary.light },
+                "&::after": currentPath === "/tema" ? { // Si es la página actual
+                  content: '""',
+                  position: "absolute",
+                  left: "50%",
+                  bottom: 0,
+                  width: "100%",
+                  height: "4px",
+                  backgroundColor: theme.palette.background.main, // Color de la línea
+                  transform: "translateX(-50%)", // Centrar la línea
+                  borderRadius: " 0 0 5px 5px",
+                } : {}, // Si no es la actual, no se agrega ::after
+              }}> 
+              <Typography variant="buttontext">Aula Virtual</Typography>
+            </Button> 
+
+            <Button 
+              sx={{
+                position: "relative", // Necesario para ::after
+                color: currentPath === "/tema" ? theme.palette.background.main : "inherit",
+                "&:hover": { backgroundColor: theme.palette.primary.light },
+                "&::after": currentPath === "/tema" ? { // Si es la página actual
+                  content: '""',
+                  position: "absolute",
+                  left: "50%",
+                  bottom: 0,
+                  width: "100%",
+                  height: "4px",
+                  backgroundColor: theme.palette.background.main, // Color de la línea
+                  transform: "translateX(-50%)", // Centrar la línea
+                  borderRadius: " 0 0 5px 5px",
+                } : {}, // Si no es la actual, no se agrega ::after
+              }}> 
+              <Typography variant="buttontext">Testimonios</Typography>
+            </Button>
+
+            <Button 
+              sx={{
+                position: "relative", // Necesario para ::after
+                color: currentPath === "/tema" ? theme.palette.background.main : "inherit",
+                "&:hover": { backgroundColor: theme.palette.primary.light },
+                "&::after": currentPath === "/tema" ? { // Si es la página actual
+                  content: '""',
+                  position: "absolute",
+                  left: "50%",
+                  bottom: 0,
+                  width: "100%",
+                  height: "4px",
+                  backgroundColor: theme.palette.background.main, // Color de la línea
+                  transform: "translateX(-50%)", // Centrar la línea
+                  borderRadius: " 0 0 5px 5px",
+                } : {}, // Si no es la actual, no se agrega ::after
+              }}> 
+              <Typography variant="buttontext">Soporte</Typography>
+            </Button>
+
+            {/*<Button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} color="inherit"> <Typography variant="buttontext">Temáticas</Typography></Button>
             <Button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} color="inherit"> <Typography variant="buttontext">Aula Virtual</Typography></Button>
             <Button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} color="inherit"> <Typography variant="buttontext">Testimonios</Typography></Button>
-            <Button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} color="inherit"> <Typography variant="buttontext">Soporte</Typography></Button>
+            <Button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} color="inherit"> <Typography variant="buttontext">Soporte</Typography></Button>+*/}
           </>
         )}
 
@@ -119,11 +211,11 @@ const Header = () => {
               }}
             >
             <List>
-              <ListItem button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} /*sx={{ backgroundColor: theme.palette.secondary.main, "&:hover": { backgroundColor: theme.palette.secondary.light } }}*/>
+              <ListItem component={Link} to="/" button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} /*sx={{ backgroundColor: theme.palette.secondary.main, "&:hover": { backgroundColor: theme.palette.secondary.light } }}*/>
                 <ListItemText primary="Inicio" sx={{ textAlign: "center", fontWeight: "bold", color: "#fff" }} />
               </ListItem>
               <Divider />
-              <ListItem button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}}>
+              <ListItem component={Link} to="/tematicas" button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}}>
                 <ListItemText primary="Temáticas" sx={{ textAlign: "center", color: "#fff" }} />
               </ListItem>
               <Divider />

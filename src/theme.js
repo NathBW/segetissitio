@@ -28,12 +28,13 @@ const theme = createTheme({
       dark: "#265026", // Verde Muy Oscuro
       darkest: "#193419", // Verde Muy Muy Oscuro
     },
-    button: {
+    background: {
       main: "#DBE64C", // Botón Verde Claro
       light: "#BCD84C", // Botón Verde Oscuro
       dark: "#A5CD4C", // Botón Verde Muy Oscuro
+      darkest: "#D9DBD1", // Botón Verde Muy Muy Oscuro
     },
-    textcolor: {
+    text: {
       main: "#F6F8ED", // Texto Principal
       light: "#FFFFFF", // Texto Secundario
       dark: "#282A29", // Texto Terciario
@@ -68,8 +69,14 @@ const theme = createTheme({
       fontFamily: "Heebo, sans-serif",
       fontSize: "16px",
       fontWeight: 400,
-      textTransform: "capitalize",
+      textTransform: "none",
 
+    },
+    variabletext: {
+      fontFamily: "Heebo, sans-serif",
+      fontSize: "16px",
+      fontWeight: 700, 
+      textTransform: "none",
     },
     a: {
       fontFamily: "Heebo, sans-serif",
@@ -78,7 +85,7 @@ const theme = createTheme({
       textDecoration: "underline",
       color: "#DBE64C",
       "&:hover": {
-        backgroundColor: "#BCD84C",
+        color: "#BCD84C",
       },
     },
   },
@@ -86,7 +93,7 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: "15px",
+          borderRadius: "10px",
           padding: "10px 14px",
           fontSize: "16px",
           fontWeight: 700,

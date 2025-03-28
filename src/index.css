@@ -104,7 +104,7 @@ button:focus-visible {
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -132,13 +132,38 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /*max-width: none;
+  margin: 0 auto;*/
   text-align: center;
+  background-image: url("./assets/imagenes/fondoblanco.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  /*padding: 2rem;
+  /*position: relative;*/
+}
+
+.footer {
+  /*all: unset;  Esto elimina cualquier estilo heredado */
+  max-width: none !important;
+  width: 100% !important;
+  left: 0 !important;
+  bottom: 0 !important;
+
+  padding: 40px 20px;
+  margin-top: 700px;
+}
+
+.header {
+  max-width: 1280px;
+  text-align: center;
+  margin: 0 auto;
+
 }
 
 .logo {
@@ -180,7 +205,7 @@ body {
 @media (prefers-color-scheme: light) {
   :root {
     color: #214731;
-    background-color: #ffffff;
+    background-color: #F6F8ED;
   }
   a:hover {
     color: #747bff;

@@ -1,4 +1,4 @@
-:root {
+/*:root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -64,5 +64,150 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}*/
+
+@font-face {
+  font-family: 'CoreMellow';
+  src: url("./assets/fonts/core-mellow/CoreMellow65Bold_25.otf") format("opentype");
+  font-style: normal;
+  letter-spacing: 0.3px;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'CoreMellow';
+  src: url("./assets/fonts/core-mellow/CoreMellow65Bold-Italic_17.otf") format("opentype");
+  font-style: italic;
+  letter-spacing: 0.3px;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'CoreMellow';
+  src: url("./assets/fonts/core-mellow/CoreMellow55Medium_28.otf") format("opentype");
+  font-style: normal;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'CoreMellow';
+  src: url("./assets/fonts/core-mellow/CoreMellow55Medium-Italic_20.otf") format("opentype");
+  font-style: italic;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
+
+:root {
+  font-family: /*Inter, system-ui, Avenir, Helvetica, Arial, sans-serif*/ 'CoreMellow', 'Heebo', sans-serif;
+  line-height: /*1.5*/ 40px;
+  letter-spacing: 0.3px;
+  /*font-weight: 400;*/
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+h3 {
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  color: #030861;
+  text-decoration: inherit;
+}*/
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+}
+
+#root {
+  /*max-width: none;
+  margin: 0 auto;*/
+  text-align: center;
+  background-image: url("./assets/imagenes/fondoblanco.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  /*padding: 2rem;
+  /*position: relative;*/
+}
+
+.footer {
+  /*all: unset;  Esto elimina cualquier estilo heredado */
+  max-width: none !important;
+  width: 100% !important;
+  left: 0 !important;
+  bottom: 0 !important;
+
+  padding: 40px 20px;
+  margin-top: 700px;
+}
+
+.header {
+  max-width: 1280px;
+  text-align: center;
+  margin: 0 auto;
+
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #214731;
+    background-color: #F6F8ED;
+  }
+  a:hover {
+    color: #747bff;
   }
 }

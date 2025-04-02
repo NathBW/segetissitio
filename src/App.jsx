@@ -94,9 +94,10 @@ import { CssBaseline } from "@mui/material";
 import Header from "./components/Header";
 import Home from "./pages/Home"; // Página de inicio
 import Tematicas from "./pages/Tematicas";
-//import AulaVirtual from "./pages/AulaVirtual";
-//import Testimonios from "./pages/Testimonios";
-//import Soporte from "./pages/Soporte";
+import AulaVirtual from "./pages/AulaVirtual";
+import Testimonios from "./pages/Testimonios";
+import Soporte from "./pages/Soporte";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -106,10 +107,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tematicas" element={<Tematicas />} />
-       {/*<Route path="/aula-virtual" element={<AulaVirtual />} />*/}
-        {/*<Route path="/testimonios" element={<Testimonios />} />*/}
-        {/*<Route path="/soporte" element={<Soporte />} />*/}
+       <Route path="/aula-virtual" element={<AulaVirtual />} />
+        <Route path="/testimonios" element={<Testimonios />} />
+        <Route path="/soporte" element={<Soporte />} />
       </Routes>
+      <Footer />
+      
     </>
   );
 }

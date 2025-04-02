@@ -33,7 +33,7 @@ import { AppBar, Toolbar, Typography, Button, IconButton} from '@mui/material';*
 
 export default Header;*/
 
-import React, { useState } from "react";
+/*import React, { useState } from "react";
 import logo from "./../assets/imagenes/tobias-logo.png";
 import {
   AppBar,
@@ -70,17 +70,17 @@ const Header = () => {
   return (
     <AppBar component="header" className="header" position="static" sx={{ color: "primary", padding: "8px 64px" , borderRadius: "20px", marginTop: "2rem", }}>
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        {/* Logo y Línea*/}
-        <Box sx={{ display: "flex", alignItems: "center" /*, flexGrow: 1 */}}>
+        {/* Logo y Línea*//*}
+        {/*<Box sx={{ display: "flex", alignItems: "center" /*, flexGrow: 1 *//*}}>
           {/*<Typography variant="h6" sx={{ fontWeight: 700 }}>
             TOBÍAS
-          </Typography>*/}
-          <img src={logo} alt="Tobías BPA Logo" style={{ height: 40 }} />
+          </Typography>*//*}
+          /*<img src={logo} alt="Tobías BPA Logo" style={{ height: 40 }} />
 
           <Divider orientation="vertical" flexItem sx={{ mx: 2, borderColor: theme.palette.text.light, height: 40, borderWidth: 2}} />
         </Box>
 
-        {/* Menú de navegación en desktop */}
+        {/* Menú de navegación en desktop *//*}
         {!isMobile && (
           <>
             <Button component={Link} to="/"
@@ -123,12 +123,12 @@ const Header = () => {
               <Typography variant="buttontext">Temáticas</Typography>
             </Button>  
 
-            <Button 
+            <Button component={Link} to="/aula-virtual"
               sx={{
                 position: "relative", // Necesario para ::after
-                color: currentPath === "/tema" ? theme.palette.background.main : "inherit",
+                color: currentPath === "/aula-virtual" ? theme.palette.background.main : "inherit",
                 "&:hover": { backgroundColor: theme.palette.primary.light },
-                "&::after": currentPath === "/tema" ? { // Si es la página actual
+                "&::after": currentPath === "/aula-virtual" ? { // Si es la página actual
                   content: '""',
                   position: "absolute",
                   left: "50%",
@@ -186,11 +186,11 @@ const Header = () => {
             {/*<Button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} color="inherit"> <Typography variant="buttontext">Temáticas</Typography></Button>
             <Button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} color="inherit"> <Typography variant="buttontext">Aula Virtual</Typography></Button>
             <Button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} color="inherit"> <Typography variant="buttontext">Testimonios</Typography></Button>
-            <Button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} color="inherit"> <Typography variant="buttontext">Soporte</Typography></Button>+*/}
-          </>
+            <Button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} color="inherit"> <Typography variant="buttontext">Soporte</Typography></Button>+*///}
+       /*   </>
         )}
 
-        {/* Menú tipo hamburguesa en móvil */}
+        {/* Menú tipo hamburguesa en móvil *//*}
         {isMobile && (
           <>
             <IconButton color="inherit" onClick={handleDrawerToggle}>
@@ -211,15 +211,15 @@ const Header = () => {
               }}
             >
             <List>
-              <ListItem component={Link} to="/" button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} /*sx={{ backgroundColor: theme.palette.secondary.main, "&:hover": { backgroundColor: theme.palette.secondary.light } }}*/>
-                <ListItemText primary="Inicio" sx={{ textAlign: "center", fontWeight: "bold", color: "#fff" }} />
+              <ListItem component={Link} to="/" button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}} /*sx={{ backgroundColor: theme.palette.secondary.main, "&:hover": { backgroundColor: theme.palette.secondary.light } }}*///>
+                /*<ListItemText primary="Inicio" sx={{ textAlign: "center", fontWeight: "bold", color: "#fff" }} />
               </ListItem>
               <Divider />
               <ListItem component={Link} to="/tematicas" button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}}>
                 <ListItemText primary="Temáticas" sx={{ textAlign: "center", color: "#fff" }} />
               </ListItem>
               <Divider />
-              <ListItem button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}}>
+              <ListItem component={Link} to="/aula-virtual" button sx={{"&:hover": { backgroundColor: theme.palette.primary.light }}}>
                 <ListItemText primary="Aula Virtual" sx={{ textAlign: "center", color: "#fff" }} />
               </ListItem>
               <Divider />
@@ -244,4 +244,168 @@ const Header = () => {
 };
 
 export default Header;
+*/
 
+import React, { useState } from "react";
+import logo from "./../assets/imagenes/tobias-logo.png";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Divider,
+  Box,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useLocation, Link } from "react-router-dom";
+
+const Header = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md")); // Detecta si es móvil
+  const location = useLocation();
+  const currentPath = location.pathname; // Ruta actual
+
+  // Rutas de navegación
+  const navLinks = [
+    { path: "/", label: "Inicio" },
+    { path: "/tematicas", label: "Temáticas" },
+    { path: "/aula-virtual", label: "Aula Virtual" },
+    { path: "/testimonios", label: "Testimonios" },
+    { path: "/soporte", label: "Soporte" },
+  ];
+
+  // Función para alternar el menú móvil
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  // Estilos comunes para los botones de navegación
+  const navButtonStyles = (path) => ({
+    position: "relative",
+    color: currentPath === path ? theme.palette.background.main : "inherit",
+    "&:hover": { backgroundColor: theme.palette.primary.light },
+    "&::after": currentPath === path
+      ? {
+          content: '""',
+          position: "absolute",
+          left: "50%",
+          bottom: 0,
+          width: "100%",
+          height: "4px",
+          backgroundColor: theme.palette.background.main,
+          transform: "translateX(-50%)",
+          borderRadius: "0 0 5px 5px",
+        }
+      : {},
+  });
+
+  return (
+    <AppBar
+      component="header"
+      className="header"
+      position="static"
+      sx={{
+        color: "primary",
+        padding: "8px 64px",
+        borderRadius: "20px",
+        marginTop: "2rem",
+      }}
+    >
+      <Toolbar
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        {/* Logo y Línea */}
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <img src={logo} alt="Tobías BPA Logo" style={{ height: 40 }} />
+          <Divider
+            orientation="vertical"
+            flexItem
+            sx={{
+              mx: 2,
+              borderColor: theme.palette.text.light,
+              height: 40,
+              borderWidth: 2,
+              borderRadius: 2,
+            }}
+          />
+        </Box>
+
+        {/* Menú de navegación en desktop */}
+        {!isMobile && (
+          <>
+            {navLinks.map((link) => (
+              <Button
+                key={link.path}
+                component={Link}
+                to={link.path}
+                sx={navButtonStyles(link.path)}
+              >
+                <Typography variant="buttontext">{link.label}</Typography>
+              </Button>
+            ))}
+          </>
+        )}
+
+        {/* Menú tipo hamburguesa en móvil */}
+        {isMobile && (
+          <>
+            <IconButton color="inherit" onClick={handleDrawerToggle}>
+              <MenuIcon />
+            </IconButton>
+            <Drawer
+              anchor="right"
+              open={mobileOpen}
+              onClose={handleDrawerToggle}
+              PaperProps={{
+                sx: {
+                  backgroundColor: theme.palette.primary.main,
+                  color: "#fff",
+                  width: 250,
+                  borderRadius: "0 0 0 20px",
+                },
+              }}
+            >
+              <List>
+                {navLinks.map((link) => (
+                  <React.Fragment key={link.path}>
+                    <ListItem
+                      component={Link}
+                      to={link.path}
+                      button
+                      sx={{
+                        "&:hover": {
+                          backgroundColor: theme.palette.primary.light,
+                        },
+                      }}
+                      onClick={handleDrawerToggle} // Cierra el menú al hacer clic
+                    >
+                      <ListItemText
+                        primary={link.label}
+                        sx={{ textAlign: "center", color: "#fff" }}
+                      />
+                    </ListItem>
+                    <Divider />
+                  </React.Fragment>
+                ))}
+              </List>
+            </Drawer>
+          </>
+        )}
+      </Toolbar>
+    </AppBar>
+  );
+};
+
+export default Header;

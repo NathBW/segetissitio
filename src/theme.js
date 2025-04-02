@@ -18,7 +18,7 @@ const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#103084", // Azul Claro
+      main: "#2A3A7E", // Azul Claro
       light: "#172045", // Azul Oscuro
       dark: "#0A0E1E", // Azul Muy Oscuro
     },

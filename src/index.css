@@ -139,11 +139,12 @@ body {
   /*max-width: none;
   margin: 0 auto;*/
   text-align: center;
-  background-image: url("./assets/imagenes/fondoblanco.png");
+  /*background-image: url("./assets/imagenes/fondoblanco.png");*/
+  background-color: #F6F8ED;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: fit-content;
   /*padding: 2rem;
   /*position: relative;*/
 }
@@ -156,7 +157,7 @@ body {
   bottom: 0 !important;
 
   padding: 40px 20px;
-  margin-top: 700px;
+  margin-top: 0px;
 }
 
 .header {
@@ -206,6 +207,7 @@ body {
   :root {
     color: #214731;
     background-color: #F6F8ED;
+    /*background-color: #ffffff;*/
   }
   a:hover {
     color: #747bff;

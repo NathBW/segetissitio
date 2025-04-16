@@ -64,7 +64,7 @@ const Tematicas = () => {
         <Typography variant="h2" color="secondary.main" mt={0} paddingTop={10}>
           Temáticas
         </Typography>
-        <Typography sx={{typography:theme.typography.text}} mt={2} mb={3}>
+        <Typography sx={{typography:theme.typography.text}} mt={5} mb={3}>
           Podrás aprender diferentes cosas que facilitarán y mejorarán tu trabajo.
         </Typography>
 

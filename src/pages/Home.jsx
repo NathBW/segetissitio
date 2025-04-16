@@ -10,6 +10,9 @@ import backgrounImageTwo from "../assets/imagenes/fondoblanco.png";
 import aliado from "../assets/imagenes/aliado.png";
 import mapausuario from "../assets/imagenes/mapa.png";
 import loginImage from "../assets/imagenes/celular.png";
+import FlourishEmbed from "../components/Mapa";
+
+
 
 // Estilos reutilizables
 // Sección de estilo para el contenedor de la sección
@@ -80,6 +83,8 @@ const allies = [
   { id: 4, name: "ANLA", image: aliado },
   { id: 5, name: "ANLA", image: aliado },
 ];
+
+
 
 const Home = () => {
   return (
@@ -274,10 +279,10 @@ const Home = () => {
         </Grid>
 
         {/* Mapa con etiquetas */}
-        <Box position="relative" display="inline-block" width="80%">
+        {/*<Box position="relative" display="inline-block" width="80%">
           <img src={mapausuario} alt="Mapa de usuarios" style={{ width: "100%", borderRadius: 8 }} />
           {/* Etiquetas */}
-          {[
+          {/*[
             { name: "Magdalena", top: "10%", left: "40%" },
             { name: "Sucre", top: "20%", left: "30%" },
             { name: "Meta", top: "55%", left: "50%" },
@@ -309,7 +314,11 @@ const Home = () => {
               {label.name}
             </Box>
           ))}
+        </Box>*/}
+        <Box mt={5} mb={5}> 
+          <FlourishEmbed />
         </Box>
+
       </Box>
 
       {/*<Footer />*/}

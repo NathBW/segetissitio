@@ -1,4 +1,4 @@
-import { Container, Typography, Button, Accordion, AccordionSummary, AccordionDetails, Grid, Box } from "@mui/material";
+import { Container, Typography, Button, Accordion, AccordionSummary, Divider, List, ListItem, AccordionDetails, Grid, Box } from "@mui/material";
 import { styled } from "@mui/system";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Footer from "../components/Footer";
@@ -7,7 +7,24 @@ import theme from "../theme";
 import backgrounImage from "../assets/imagenes/fondoAzul.png";
 import backgrounImageTwo from "../assets/imagenes/fondoblanco.png";
 import capacitacion from "../assets/imagenes/aliado.png";
+//import PhoneIcon from "@mui/icons-material/Phone";
+//import AccessTimeIcon from "@mui/icons-material/AccessTime";
+//import LocationOnIcon from "@mui/icons-material/LocationOn";
+//import EmailIcon from "@mui/icons-material/Email";
+//import FacebookIcon from "@mui/icons-material/Facebook";
+//import InstagramIcon from "@mui/icons-material/Instagram";
+//import WhatsAppIcon from "@mui/icons-material/Whatsapp";
+//import XIcon from '@mui/icons-material/X'; // si usas "X" en lugar de Twitter
 
+// Reemplazo de imports
+import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
+import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import XIcon from '@mui/icons-material/X'; // o reemplazar con ícono custom si no existe
+import instagramlogo from "./../assets/svg/iconoi.svg"
+import youtubelogo from "./../assets/svg/iconoy.svg"
+import facebooklogo from "./../assets/svg/iconof.svg"
 
 
 
@@ -221,7 +238,111 @@ const Soporte = () => {
                 ))}
               </Grid>
             </Box>
-    
+
+
+    {/* Sección de información de contacto */}
+    <Box textAlign="center" mt={0} mb={10} sx={{backgroundImage: `url(${backgrounImageTwo})`, backgroundColor: theme.palette.text.light}}>
+      <Typography variant="h2" color="secondary.main" mt={0} paddingTop={10} pb={0} gutterBottom>
+        Información Contacto
+      </Typography>
+      <Typography color="text.dark" mt={5} mb={3} sx={{ typography: theme.typography.text }}>
+        Si necesitas ayuda para capacitaciones o alguna duda, contáctanos
+      </Typography>
+      <Box
+        sx={{
+          backgroundColor: "secondary.light", // verde institucional
+          color: "text.main",
+          borderRadius: 2,
+          maxWidth: "1000px",
+          margin: "0 auto",
+          mt: 2,
+          p: 5,
+        }}
+      >
+        <Grid container spacing={4}>
+          {/* Teléfono */}
+          <Grid item xs={12} sm={6}>
+            <Box display="flex" alignItems="center" gap={2}>
+              <LocalPhoneOutlinedIcon fontSize="large"/>
+              <Box textAlign="left">
+                <Typography variant="h3" color="text.main">Número Contacto</Typography>
+                <Typography color="text.main" sx={{ typography: theme.typography.text }}>(+571) 466 1725</Typography>
+              </Box>
+            </Box>
+            <Divider sx={{ mt: 2, borderColor: "#ccc" }} />
+          </Grid>
+
+          {/* Horario */}
+          <Grid item xs={12} sm={6}>
+            <Box display="flex" alignItems="center" gap={2}>
+              <AccessTimeOutlinedIcon fontSize="large" />
+              <Box textAlign="left">
+                <Typography variant="h3" color="text.main">Horario Contacto</Typography>
+                <Typography color="text.main" sx={{ typography: theme.typography.text }}>Lorem ipsum</Typography>
+              </Box>
+            </Box>
+            <Divider sx={{ mt: 2, borderColor: "#ccc" }} />
+          </Grid>
+
+          {/* Dirección 1 */}
+          <Grid item xs={12} sm={6}>
+            <Box display="flex" alignItems="center" gap={2}>
+              <LocationOnOutlinedIcon fontSize="large" />
+              <Box textAlign="left">
+                <Typography variant="h3" color="text.main">Dirección 1</Typography>
+                <Typography color="text.main" sx={{ typography: theme.typography.text }}>Bogotá: Calle 106 # 54-73 Of: 703</Typography>
+              </Box>
+            </Box>
+            <Divider sx={{ mt: 2, borderColor: "#ccc" }} />
+          </Grid>
+
+          {/* Dirección 2 */}
+          <Grid item xs={12} sm={6}>
+            <Box display="flex" alignItems="center" gap={2}>
+              <LocationOnOutlinedIcon fontSize="large" />
+              <Box textAlign="left">
+                <Typography variant="h3" color="text.main">Dirección 2</Typography>
+                <Typography color="text.main" sx={{ typography: theme.typography.text }}>Fusagasugá: Cll 21 B # 2a -31</Typography>
+              </Box>
+            </Box>
+            <Divider sx={{ mt: 2, borderColor: "#ccc" }} />
+          </Grid>
+
+          {/* Correo */}
+          <Grid item xs={12} sm={6}>
+            <Box display="flex" alignItems="center" gap={2}>
+              <EmailOutlinedIcon fontSize="large" />
+              <Box textAlign="left">
+                <Typography variant="h3" color="text.main">Correo</Typography>
+                <Typography color="text.main" sx={{ typography: theme.typography.text }}>servicioalcliente@segetis.co</Typography>
+              </Box>
+            </Box>
+            <Divider sx={{ mt: 2, borderColor: "#ccc" }} />
+          </Grid>
+
+          {/* Redes */}
+          <Grid item xs={12} sm={6}>
+            <Box display="flex" alignItems="flex-start" gap={2}>
+              <XIcon fontSize="large" />
+              <Box textAlign="left">
+                <Typography variant="h3" color="text.main">Redes</Typography>
+                <List dense sx={{ color: "text.main", pl: 2 }}>
+                  <ListItem disablePadding sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <img src={facebooklogo} style={{width: 20,}} />TOBÍAS BPA
+                  </ListItem>
+                  <ListItem disablePadding sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <img src={instagramlogo} style={{width: 20,}} />TOBÍAS BPA
+                  </ListItem>
+                  <ListItem disablePadding sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <img src={youtubelogo} style={{width: 20,}} />TOBÍAS BPA
+                  </ListItem>
+                </List>
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
+    </Box>
     {/*<Footer />*/}
     
     </Container>

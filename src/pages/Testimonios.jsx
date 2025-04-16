@@ -1,7 +1,7 @@
 const Testimonios = () => {
     return (
       <div>
-        <h1>Aula Virtual</h1>
+        <h1>Testimonios</h1>
       </div>
     );
   };
